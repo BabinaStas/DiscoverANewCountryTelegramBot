@@ -1,6 +1,8 @@
 package by.project.discoveranewcountrybot.service;
 
 import by.project.discoveranewcountrybot.config.BotConfig;
+import by.project.discoveranewcountrybot.service.commands.AboutBotCommand;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
 import org.telegram.telegrambots.bots.TelegramLongPollingBot;
 import org.telegram.telegrambots.meta.api.methods.commands.SetMyCommands;
@@ -13,15 +15,20 @@ import org.telegram.telegrambots.meta.exceptions.TelegramApiException;
 import java.util.ArrayList;
 import java.util.List;
 
+//Аннотация позволяет подключать логирование.
+@Slf4j
 //Аннотация позваляет автоматически Spring создать экземпляр класса.
 @Component
 // Для того что бы Telegram общался с BackEnd необходимо насловаться от данной библиотеки.
 public class BotService extends TelegramLongPollingBot {
 
     final BotConfig CONFIG;
+    final AboutBotCommand ABOUTBOTCOMMAND;
 
-    public BotService(BotConfig config) {
+    public BotService(BotConfig config, AboutBotCommand aboutBotCommand) {
         this.CONFIG = config;
+        this.ABOUTBOTCOMMAND = aboutBotCommand;
+        //В конструкторе создаеться лист, который в дальнейшем передаеться для создания меню бота.
        List<BotCommand> listOfCommands = new ArrayList<>();
         listOfCommands.add(new BotCommand("/start", "Command get a welcome message"));
         listOfCommands.add(new BotCommand("/all_cites", "Command get a list of cites"));
@@ -33,7 +40,7 @@ public class BotService extends TelegramLongPollingBot {
         try {
             this.execute(new SetMyCommands(listOfCommands, new BotCommandScopeDefault(), null));
         }catch (TelegramApiException e) {
-            System.out.println("Error" + e);
+            log.error("Error occurred: " + e.getMessage());
         }
     }
 
@@ -47,6 +54,7 @@ public class BotService extends TelegramLongPollingBot {
         return CONFIG.getToken();
     }
 
+    //Метод описывающий все изменения в боте. От отправки сообщений до изменения настроек.
     @Override
     public void onUpdateReceived(Update update) {
         //Данный метод описывает действия которые будут выполняться если бот получит какое-то сообщение.
@@ -79,6 +87,7 @@ public class BotService extends TelegramLongPollingBot {
     }
     private void startCommandReceived(Long chatId, String nameUser){
         String answer = "Hi, " + nameUser + ", nice to meet you!";
+        log.info("Replied to user: " + nameUser);
         sendMessage(chatId, answer);
     }
     private void allCitesCommandReceived(Long chatId){
@@ -98,10 +107,7 @@ public class BotService extends TelegramLongPollingBot {
         sendMessage(chatId, answer);
     }
     private void aboutBotCommandReceived(Long chatId){
-        String answer = "The bot provides information about the city " +
-                "(population, which country it belongs to, year of foundation, etc.)" +
-                " and a list of cities that it knows about. The bot has the ability to add, " +
-                "edit and delete information entered into the database using the bot.";
+        String answer = ABOUTBOTCOMMAND.getINFORMATIZATION();
         sendMessage(chatId, answer);
     }
 
@@ -112,7 +118,7 @@ public class BotService extends TelegramLongPollingBot {
         try {
             execute(messageForUser);
         }catch (TelegramApiException e){
-            System.out.println(e);
+            log.error("Error occurred: " + e.getMessage());
         }
     }
 }
