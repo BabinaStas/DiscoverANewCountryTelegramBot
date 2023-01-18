@@ -3,7 +3,8 @@ package by.project.discoveranewcountrybot.model;
 import lombok.Data;
 
 import javax.persistence.*;
-import java.sql.Timestamp;
+import java.util.Date;
+
 
 //Аннотация связывает таблицу с даннам классом.
 @Entity(name = "cites_data_table")
@@ -13,7 +14,8 @@ public class City {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    private String name;
     private String country;
     private Double population;
-    private Timestamp foundationYear;
+    private Date foundationYear;
 }

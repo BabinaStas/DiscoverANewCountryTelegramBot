@@ -1,7 +1,9 @@
 package by.project.discoveranewcountrybot.service;
 
 import by.project.discoveranewcountrybot.config.BotConfig;
+import by.project.discoveranewcountrybot.model.City;
 import by.project.discoveranewcountrybot.service.commands.AboutBotCommand;
+import by.project.discoveranewcountrybot.service.commands.AddCityCommand;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
 import org.telegram.telegrambots.bots.TelegramLongPollingBot;
@@ -12,7 +14,10 @@ import org.telegram.telegrambots.meta.api.objects.commands.BotCommand;
 import org.telegram.telegrambots.meta.api.objects.commands.scope.BotCommandScopeDefault;
 import org.telegram.telegrambots.meta.exceptions.TelegramApiException;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 //Аннотация позволяет подключать логирование.
@@ -25,9 +30,12 @@ public class BotService extends TelegramLongPollingBot {
     final BotConfig CONFIG;
     final AboutBotCommand ABOUTBOTCOMMAND;
 
-    public BotService(BotConfig config, AboutBotCommand aboutBotCommand) {
+    final AddCityCommand addCityCommand;
+
+    public BotService(BotConfig config, AboutBotCommand aboutBotCommand, AddCityCommand addCityCommand) {
         this.CONFIG = config;
         this.ABOUTBOTCOMMAND = aboutBotCommand;
+        this.addCityCommand = addCityCommand;
         //В конструкторе создаеться лист, который в дальнейшем передаеться для создания меню бота.
        List<BotCommand> listOfCommands = new ArrayList<>();
         listOfCommands.add(new BotCommand("/start", "Command get a welcome message"));
@@ -69,7 +77,7 @@ public class BotService extends TelegramLongPollingBot {
                     allCitesCommandReceived(chatId);
                     break;
                 case "/add_city":
-                    addCityCommandReceived(chatId);
+                    addCityCommandReceived(chatId, update);
                     break;
                 case "/correction_information_of_city":
                     correctionInformationOfCityCommandReceived(chatId);
@@ -94,10 +102,34 @@ public class BotService extends TelegramLongPollingBot {
         String answer = "All cites:";
         sendMessage(chatId, answer);
     }
-    private void addCityCommandReceived(Long chatId){
+    private void addCityCommandReceived(Long chatId, Update update) {
         String answer = "Please add new city:";
         sendMessage(chatId, answer);
-    }
+            City city = new City();
+            city.setId((long) (Math.random() * 100));
+        String name = "Please add name city:";
+        sendMessage(chatId, name);
+            city.setName(update.getMessage().getText());
+        String country = "Please add country city:";
+        sendMessage(chatId, country);
+            city.setCountry(update.getMessage().getText());
+        String population = "Please add population of city:";
+        sendMessage(chatId, population);
+            city.setPopulation(Double.parseDouble(update.getMessage().getText()));
+            SimpleDateFormat format = new SimpleDateFormat();
+            format.applyPattern("yyyy");
+            try {
+                Date docDate = format.parse(update.getMessage().getText());
+                String foundationYear = "Please add year of foundation city:";
+                sendMessage(chatId, foundationYear);
+                city.setFoundationYear(docDate);
+            } catch (ParseException e) {
+                throw new RuntimeException(e);
+            }
+            addCityCommand.addCityCommand(city);
+        }
+
+
     private void correctionInformationOfCityCommandReceived(Long chatId){
         String answer = "What would you like to change in the city? ";
         sendMessage(chatId, answer);
