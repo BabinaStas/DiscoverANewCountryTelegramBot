@@ -12,10 +12,18 @@ import java.util.Date;
 public class City {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Integer id;
     private String name;
     private String country;
     private Double population;
     private Date foundationYear;
+
+    @Override
+    public String toString() {
+        return "\nName of a city: " + name + "\n" +
+                "Country: " + country + "\n" +
+                "Population: " + population + "\n" +
+                "Foundation: "  + foundationYear;
+
+    }
 }

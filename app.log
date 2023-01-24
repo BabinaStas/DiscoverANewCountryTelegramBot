@@ -1,0 +1,230 @@
+2023-01-24 18:26:57,902 INFO by.project.discoveranewcountrybot.DiscoverANewCountryBotApplication [main] Starting DiscoverANewCountryBotApplication using Java 1.8.0_352 on DESKTOP-ASQFE2E with PID 7420 (E:\1.  JAVA Lab\TelegramBotDiscoverANewCountry\DiscoverANewCountryBot\target\classes started by Gygabyte in E:\1.  JAVA Lab\TelegramBotDiscoverANewCountry\DiscoverANewCountryBot)
+2023-01-24 18:26:57,921 INFO by.project.discoveranewcountrybot.DiscoverANewCountryBotApplication [main] No active profile set, falling back to 1 default profile: "default"
+2023-01-24 18:26:58,633 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-01-24 18:26:58,743 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 96 ms. Found 1 JPA repository interfaces.
+2023-01-24 18:26:59,214 INFO org.hibernate.jpa.internal.util.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-01-24 18:26:59,282 INFO org.hibernate.Version [main] HHH000412: Hibernate ORM core version 5.6.9.Final
+2023-01-24 18:26:59,516 INFO org.hibernate.annotations.common.Version [main] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-01-24 18:26:59,669 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Starting...
+2023-01-24 18:26:59,910 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Start completed.
+2023-01-24 18:26:59,930 INFO org.hibernate.dialect.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL95Dialect
+2023-01-24 18:27:00,751 INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-01-24 18:27:00,762 INFO org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-01-24 18:27:02,737 INFO by.project.discoveranewcountrybot.DiscoverANewCountryBotApplication [main] Started DiscoverANewCountryBotApplication in 5.442 seconds (JVM running for 7.342)
+2023-01-24 18:27:34,958 INFO by.project.discoveranewcountrybot.service.BotService [discover_country_bot Telegram Executor] Replied to user: Stanislav
+2023-01-24 18:33:46,120 INFO org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean [SpringApplicationShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-01-24 18:33:46,128 INFO com.zaxxer.hikari.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown initiated...
+2023-01-24 18:33:46,149 INFO com.zaxxer.hikari.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown completed.
+2023-01-24 18:34:01,264 INFO by.project.discoveranewcountrybot.DiscoverANewCountryBotApplication [main] Starting DiscoverANewCountryBotApplication using Java 1.8.0_352 on DESKTOP-ASQFE2E with PID 8208 (E:\1.  JAVA Lab\TelegramBotDiscoverANewCountry\DiscoverANewCountryBot\target\classes started by Gygabyte in E:\1.  JAVA Lab\TelegramBotDiscoverANewCountry\DiscoverANewCountryBot)
+2023-01-24 18:34:01,267 INFO by.project.discoveranewcountrybot.DiscoverANewCountryBotApplication [main] No active profile set, falling back to 1 default profile: "default"
+2023-01-24 18:34:01,836 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-01-24 18:34:01,945 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 96 ms. Found 1 JPA repository interfaces.
+2023-01-24 18:34:02,363 INFO org.hibernate.jpa.internal.util.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-01-24 18:34:02,414 INFO org.hibernate.Version [main] HHH000412: Hibernate ORM core version 5.6.9.Final
+2023-01-24 18:34:02,583 INFO org.hibernate.annotations.common.Version [main] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-01-24 18:34:02,706 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Starting...
+2023-01-24 18:34:02,900 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Start completed.
+2023-01-24 18:34:02,918 INFO org.hibernate.dialect.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL95Dialect
+2023-01-24 18:34:04,386 INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-01-24 18:34:04,413 INFO org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-01-24 18:34:07,728 INFO by.project.discoveranewcountrybot.DiscoverANewCountryBotApplication [main] Started DiscoverANewCountryBotApplication in 6.902 seconds (JVM running for 8.173)
+2023-01-24 18:34:14,703 INFO by.project.discoveranewcountrybot.service.BotService [discover_country_bot Telegram Executor] Replied to user: Stanislav
+2023-01-24 18:35:09,454 INFO org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean [SpringApplicationShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-01-24 18:35:09,463 INFO com.zaxxer.hikari.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown initiated...
+2023-01-24 18:35:09,512 INFO com.zaxxer.hikari.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown completed.
+2023-01-24 18:35:20,853 INFO by.project.discoveranewcountrybot.DiscoverANewCountryBotApplication [main] Starting DiscoverANewCountryBotApplication using Java 1.8.0_352 on DESKTOP-ASQFE2E with PID 5208 (E:\1.  JAVA Lab\TelegramBotDiscoverANewCountry\DiscoverANewCountryBot\target\classes started by Gygabyte in E:\1.  JAVA Lab\TelegramBotDiscoverANewCountry\DiscoverANewCountryBot)
+2023-01-24 18:35:20,856 INFO by.project.discoveranewcountrybot.DiscoverANewCountryBotApplication [main] No active profile set, falling back to 1 default profile: "default"
+2023-01-24 18:35:21,343 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-01-24 18:35:21,430 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 78 ms. Found 1 JPA repository interfaces.
+2023-01-24 18:35:21,791 INFO org.hibernate.jpa.internal.util.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-01-24 18:35:21,833 INFO org.hibernate.Version [main] HHH000412: Hibernate ORM core version 5.6.9.Final
+2023-01-24 18:35:21,980 INFO org.hibernate.annotations.common.Version [main] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-01-24 18:35:22,089 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Starting...
+2023-01-24 18:35:22,293 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Start completed.
+2023-01-24 18:35:22,309 INFO org.hibernate.dialect.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL95Dialect
+2023-01-24 18:35:23,075 INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-01-24 18:35:23,084 INFO org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-01-24 18:35:24,879 INFO by.project.discoveranewcountrybot.DiscoverANewCountryBotApplication [main] Started DiscoverANewCountryBotApplication in 4.467 seconds (JVM running for 5.482)
+2023-01-24 18:56:57,147 INFO org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean [SpringApplicationShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-01-24 18:56:57,159 INFO com.zaxxer.hikari.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown initiated...
+2023-01-24 18:56:57,212 INFO com.zaxxer.hikari.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown completed.
+2023-01-24 18:57:09,595 INFO by.project.discoveranewcountrybot.DiscoverANewCountryBotApplication [main] Starting DiscoverANewCountryBotApplication using Java 1.8.0_352 on DESKTOP-ASQFE2E with PID 10180 (E:\1.  JAVA Lab\TelegramBotDiscoverANewCountry\DiscoverANewCountryBot\target\classes started by Gygabyte in E:\1.  JAVA Lab\TelegramBotDiscoverANewCountry\DiscoverANewCountryBot)
+2023-01-24 18:57:09,599 INFO by.project.discoveranewcountrybot.DiscoverANewCountryBotApplication [main] No active profile set, falling back to 1 default profile: "default"
+2023-01-24 18:57:10,251 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-01-24 18:57:10,359 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 95 ms. Found 1 JPA repository interfaces.
+2023-01-24 18:57:10,914 INFO org.hibernate.jpa.internal.util.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-01-24 18:57:10,983 INFO org.hibernate.Version [main] HHH000412: Hibernate ORM core version 5.6.9.Final
+2023-01-24 18:57:11,192 INFO org.hibernate.annotations.common.Version [main] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-01-24 18:57:11,389 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Starting...
+2023-01-24 18:57:11,621 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Start completed.
+2023-01-24 18:57:11,641 INFO org.hibernate.dialect.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL95Dialect
+2023-01-24 18:57:12,336 INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-01-24 18:57:12,344 INFO org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-01-24 18:57:14,861 INFO by.project.discoveranewcountrybot.DiscoverANewCountryBotApplication [main] Started DiscoverANewCountryBotApplication in 5.821 seconds (JVM running for 7.401)
+2023-01-24 19:03:51,439 INFO org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean [SpringApplicationShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-01-24 19:03:51,444 INFO com.zaxxer.hikari.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown initiated...
+2023-01-24 19:03:51,456 INFO com.zaxxer.hikari.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown completed.
+2023-01-24 19:04:03,775 INFO by.project.discoveranewcountrybot.DiscoverANewCountryBotApplication [main] Starting DiscoverANewCountryBotApplication using Java 1.8.0_352 on DESKTOP-ASQFE2E with PID 5668 (E:\1.  JAVA Lab\TelegramBotDiscoverANewCountry\DiscoverANewCountryBot\target\classes started by Gygabyte in E:\1.  JAVA Lab\TelegramBotDiscoverANewCountry\DiscoverANewCountryBot)
+2023-01-24 19:04:03,778 INFO by.project.discoveranewcountrybot.DiscoverANewCountryBotApplication [main] No active profile set, falling back to 1 default profile: "default"
+2023-01-24 19:04:04,398 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-01-24 19:04:04,505 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 95 ms. Found 1 JPA repository interfaces.
+2023-01-24 19:04:04,951 INFO org.hibernate.jpa.internal.util.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-01-24 19:04:05,007 INFO org.hibernate.Version [main] HHH000412: Hibernate ORM core version 5.6.9.Final
+2023-01-24 19:04:05,203 INFO org.hibernate.annotations.common.Version [main] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-01-24 19:04:05,334 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Starting...
+2023-01-24 19:04:05,529 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Start completed.
+2023-01-24 19:04:05,546 INFO org.hibernate.dialect.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL95Dialect
+2023-01-24 19:04:06,308 INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-01-24 19:04:06,320 INFO org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-01-24 19:04:08,323 INFO by.project.discoveranewcountrybot.DiscoverANewCountryBotApplication [main] Started DiscoverANewCountryBotApplication in 5.111 seconds (JVM running for 6.701)
+2023-01-24 19:04:30,059 INFO by.project.discoveranewcountrybot.service.BotService [discover_country_bot Telegram Executor] Replied to user: Stanislav
+2023-01-24 19:05:16,603 INFO org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean [SpringApplicationShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-01-24 19:05:16,608 INFO com.zaxxer.hikari.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown initiated...
+2023-01-24 19:05:16,626 INFO com.zaxxer.hikari.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown completed.
+2023-01-24 19:05:43,256 INFO by.project.discoveranewcountrybot.DiscoverANewCountryBotApplication [main] Starting DiscoverANewCountryBotApplication using Java 1.8.0_352 on DESKTOP-ASQFE2E with PID 2820 (E:\1.  JAVA Lab\TelegramBotDiscoverANewCountry\DiscoverANewCountryBot\target\classes started by Gygabyte in E:\1.  JAVA Lab\TelegramBotDiscoverANewCountry\DiscoverANewCountryBot)
+2023-01-24 19:05:43,260 INFO by.project.discoveranewcountrybot.DiscoverANewCountryBotApplication [main] No active profile set, falling back to 1 default profile: "default"
+2023-01-24 19:05:43,969 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-01-24 19:05:44,067 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 88 ms. Found 1 JPA repository interfaces.
+2023-01-24 19:05:44,484 INFO org.hibernate.jpa.internal.util.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-01-24 19:05:44,536 INFO org.hibernate.Version [main] HHH000412: Hibernate ORM core version 5.6.9.Final
+2023-01-24 19:05:44,699 INFO org.hibernate.annotations.common.Version [main] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-01-24 19:05:44,814 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Starting...
+2023-01-24 19:05:45,109 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Start completed.
+2023-01-24 19:05:45,127 INFO org.hibernate.dialect.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL95Dialect
+2023-01-24 19:05:45,761 INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-01-24 19:05:45,771 INFO org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-01-24 19:05:48,098 INFO by.project.discoveranewcountrybot.DiscoverANewCountryBotApplication [main] Started DiscoverANewCountryBotApplication in 5.492 seconds (JVM running for 7.272)
+2023-01-24 19:12:14,841 INFO org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean [SpringApplicationShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-01-24 19:12:14,848 INFO com.zaxxer.hikari.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown initiated...
+2023-01-24 19:12:14,874 INFO com.zaxxer.hikari.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown completed.
+2023-01-24 19:12:26,436 INFO by.project.discoveranewcountrybot.DiscoverANewCountryBotApplication [main] Starting DiscoverANewCountryBotApplication using Java 1.8.0_352 on DESKTOP-ASQFE2E with PID 5892 (E:\1.  JAVA Lab\TelegramBotDiscoverANewCountry\DiscoverANewCountryBot\target\classes started by Gygabyte in E:\1.  JAVA Lab\TelegramBotDiscoverANewCountry\DiscoverANewCountryBot)
+2023-01-24 19:12:26,441 INFO by.project.discoveranewcountrybot.DiscoverANewCountryBotApplication [main] No active profile set, falling back to 1 default profile: "default"
+2023-01-24 19:12:27,182 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-01-24 19:12:27,305 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 108 ms. Found 1 JPA repository interfaces.
+2023-01-24 19:12:27,818 INFO org.hibernate.jpa.internal.util.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-01-24 19:12:27,882 INFO org.hibernate.Version [main] HHH000412: Hibernate ORM core version 5.6.9.Final
+2023-01-24 19:12:28,128 INFO org.hibernate.annotations.common.Version [main] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-01-24 19:12:28,314 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Starting...
+2023-01-24 19:12:28,710 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Start completed.
+2023-01-24 19:12:28,737 INFO org.hibernate.dialect.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL95Dialect
+2023-01-24 19:12:29,836 INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-01-24 19:12:29,865 INFO org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-01-24 19:12:33,809 INFO by.project.discoveranewcountrybot.DiscoverANewCountryBotApplication [main] Started DiscoverANewCountryBotApplication in 7.97 seconds (JVM running for 9.852)
+2023-01-24 19:15:01,223 INFO org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean [SpringApplicationShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-01-24 19:15:01,235 INFO com.zaxxer.hikari.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown initiated...
+2023-01-24 19:15:01,287 INFO com.zaxxer.hikari.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown completed.
+2023-01-24 19:15:14,975 INFO by.project.discoveranewcountrybot.DiscoverANewCountryBotApplication [main] Starting DiscoverANewCountryBotApplication using Java 1.8.0_352 on DESKTOP-ASQFE2E with PID 8768 (E:\1.  JAVA Lab\TelegramBotDiscoverANewCountry\DiscoverANewCountryBot\target\classes started by Gygabyte in E:\1.  JAVA Lab\TelegramBotDiscoverANewCountry\DiscoverANewCountryBot)
+2023-01-24 19:15:15,018 INFO by.project.discoveranewcountrybot.DiscoverANewCountryBotApplication [main] No active profile set, falling back to 1 default profile: "default"
+2023-01-24 19:15:15,601 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-01-24 19:15:15,700 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 88 ms. Found 1 JPA repository interfaces.
+2023-01-24 19:15:16,127 INFO org.hibernate.jpa.internal.util.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-01-24 19:15:16,180 INFO org.hibernate.Version [main] HHH000412: Hibernate ORM core version 5.6.9.Final
+2023-01-24 19:15:16,351 INFO org.hibernate.annotations.common.Version [main] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-01-24 19:15:16,464 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Starting...
+2023-01-24 19:15:16,645 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Start completed.
+2023-01-24 19:15:16,662 INFO org.hibernate.dialect.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL95Dialect
+2023-01-24 19:15:17,307 INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-01-24 19:15:17,317 INFO org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-01-24 19:15:20,423 INFO by.project.discoveranewcountrybot.DiscoverANewCountryBotApplication [main] Started DiscoverANewCountryBotApplication in 5.923 seconds (JVM running for 7.749)
+2023-01-24 19:17:49,265 INFO org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean [SpringApplicationShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-01-24 19:17:49,271 INFO com.zaxxer.hikari.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown initiated...
+2023-01-24 19:17:49,327 INFO com.zaxxer.hikari.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown completed.
+2023-01-24 19:18:00,279 INFO by.project.discoveranewcountrybot.DiscoverANewCountryBotApplication [main] Starting DiscoverANewCountryBotApplication using Java 1.8.0_352 on DESKTOP-ASQFE2E with PID 3176 (E:\1.  JAVA Lab\TelegramBotDiscoverANewCountry\DiscoverANewCountryBot\target\classes started by Gygabyte in E:\1.  JAVA Lab\TelegramBotDiscoverANewCountry\DiscoverANewCountryBot)
+2023-01-24 19:18:00,283 INFO by.project.discoveranewcountrybot.DiscoverANewCountryBotApplication [main] No active profile set, falling back to 1 default profile: "default"
+2023-01-24 19:18:01,020 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-01-24 19:18:01,153 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 117 ms. Found 1 JPA repository interfaces.
+2023-01-24 19:18:01,664 INFO org.hibernate.jpa.internal.util.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-01-24 19:18:01,728 INFO org.hibernate.Version [main] HHH000412: Hibernate ORM core version 5.6.9.Final
+2023-01-24 19:18:01,951 INFO org.hibernate.annotations.common.Version [main] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-01-24 19:18:02,107 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Starting...
+2023-01-24 19:18:02,323 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Start completed.
+2023-01-24 19:18:02,343 INFO org.hibernate.dialect.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL95Dialect
+2023-01-24 19:18:03,058 INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-01-24 19:18:03,069 INFO org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-01-24 19:18:05,008 INFO by.project.discoveranewcountrybot.DiscoverANewCountryBotApplication [main] Started DiscoverANewCountryBotApplication in 5.306 seconds (JVM running for 6.654)
+2023-01-24 19:19:00,909 INFO org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean [SpringApplicationShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-01-24 19:19:00,914 INFO com.zaxxer.hikari.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown initiated...
+2023-01-24 19:19:00,955 INFO com.zaxxer.hikari.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown completed.
+2023-01-24 19:19:12,609 INFO by.project.discoveranewcountrybot.DiscoverANewCountryBotApplication [main] Starting DiscoverANewCountryBotApplication using Java 1.8.0_352 on DESKTOP-ASQFE2E with PID 2340 (E:\1.  JAVA Lab\TelegramBotDiscoverANewCountry\DiscoverANewCountryBot\target\classes started by Gygabyte in E:\1.  JAVA Lab\TelegramBotDiscoverANewCountry\DiscoverANewCountryBot)
+2023-01-24 19:19:12,612 INFO by.project.discoveranewcountrybot.DiscoverANewCountryBotApplication [main] No active profile set, falling back to 1 default profile: "default"
+2023-01-24 19:19:13,111 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-01-24 19:19:13,200 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 78 ms. Found 1 JPA repository interfaces.
+2023-01-24 19:19:13,650 INFO org.hibernate.jpa.internal.util.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-01-24 19:19:13,700 INFO org.hibernate.Version [main] HHH000412: Hibernate ORM core version 5.6.9.Final
+2023-01-24 19:19:13,888 INFO org.hibernate.annotations.common.Version [main] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-01-24 19:19:14,024 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Starting...
+2023-01-24 19:19:14,228 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Start completed.
+2023-01-24 19:19:14,249 INFO org.hibernate.dialect.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL95Dialect
+2023-01-24 19:19:15,019 INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-01-24 19:19:15,028 INFO org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-01-24 19:19:17,648 INFO by.project.discoveranewcountrybot.DiscoverANewCountryBotApplication [main] Started DiscoverANewCountryBotApplication in 5.439 seconds (JVM running for 6.599)
+2023-01-24 19:21:56,356 INFO org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean [SpringApplicationShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-01-24 19:21:56,365 INFO com.zaxxer.hikari.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown initiated...
+2023-01-24 19:21:56,417 INFO com.zaxxer.hikari.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown completed.
+2023-01-24 19:22:03,839 INFO by.project.discoveranewcountrybot.DiscoverANewCountryBotApplication [main] Starting DiscoverANewCountryBotApplication using Java 1.8.0_352 on DESKTOP-ASQFE2E with PID 8244 (E:\1.  JAVA Lab\TelegramBotDiscoverANewCountry\DiscoverANewCountryBot\target\classes started by Gygabyte in E:\1.  JAVA Lab\TelegramBotDiscoverANewCountry\DiscoverANewCountryBot)
+2023-01-24 19:22:03,842 INFO by.project.discoveranewcountrybot.DiscoverANewCountryBotApplication [main] No active profile set, falling back to 1 default profile: "default"
+2023-01-24 19:22:04,429 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-01-24 19:22:04,534 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 92 ms. Found 1 JPA repository interfaces.
+2023-01-24 19:22:04,993 INFO org.hibernate.jpa.internal.util.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-01-24 19:22:05,043 INFO org.hibernate.Version [main] HHH000412: Hibernate ORM core version 5.6.9.Final
+2023-01-24 19:22:05,230 INFO org.hibernate.annotations.common.Version [main] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-01-24 19:22:05,373 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Starting...
+2023-01-24 19:22:05,642 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Start completed.
+2023-01-24 19:22:05,660 INFO org.hibernate.dialect.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL95Dialect
+2023-01-24 19:22:06,354 INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-01-24 19:22:06,366 INFO org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-01-24 19:22:08,714 INFO by.project.discoveranewcountrybot.DiscoverANewCountryBotApplication [main] Started DiscoverANewCountryBotApplication in 5.459 seconds (JVM running for 6.743)
+2023-01-24 19:22:32,034 INFO by.project.discoveranewcountrybot.service.BotService [discover_country_bot Telegram Executor] Replied to user: Stanislav
+2023-01-24 19:23:44,316 INFO org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean [SpringApplicationShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-01-24 19:23:44,321 INFO com.zaxxer.hikari.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown initiated...
+2023-01-24 19:23:44,340 INFO com.zaxxer.hikari.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown completed.
+2023-01-24 19:23:57,673 INFO by.project.discoveranewcountrybot.DiscoverANewCountryBotApplication [main] Starting DiscoverANewCountryBotApplication using Java 1.8.0_352 on DESKTOP-ASQFE2E with PID 1620 (E:\1.  JAVA Lab\TelegramBotDiscoverANewCountry\DiscoverANewCountryBot\target\classes started by Gygabyte in E:\1.  JAVA Lab\TelegramBotDiscoverANewCountry\DiscoverANewCountryBot)
+2023-01-24 19:23:57,676 INFO by.project.discoveranewcountrybot.DiscoverANewCountryBotApplication [main] No active profile set, falling back to 1 default profile: "default"
+2023-01-24 19:23:58,322 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-01-24 19:23:58,457 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 121 ms. Found 1 JPA repository interfaces.
+2023-01-24 19:23:58,922 INFO org.hibernate.jpa.internal.util.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-01-24 19:23:58,975 INFO org.hibernate.Version [main] HHH000412: Hibernate ORM core version 5.6.9.Final
+2023-01-24 19:23:59,176 INFO org.hibernate.annotations.common.Version [main] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-01-24 19:23:59,340 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Starting...
+2023-01-24 19:23:59,997 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Start completed.
+2023-01-24 19:24:00,036 INFO org.hibernate.dialect.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL95Dialect
+2023-01-24 19:24:01,606 INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-01-24 19:24:01,627 INFO org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-01-24 19:24:04,630 INFO by.project.discoveranewcountrybot.DiscoverANewCountryBotApplication [main] Started DiscoverANewCountryBotApplication in 7.503 seconds (JVM running for 9.197)
+2023-01-24 19:24:19,795 INFO by.project.discoveranewcountrybot.service.BotService [discover_country_bot Telegram Executor] Replied to user: Stanislav
+2023-01-24 20:30:12,783 INFO org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean [SpringApplicationShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-01-24 20:30:12,794 INFO com.zaxxer.hikari.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown initiated...
+2023-01-24 20:30:12,841 INFO com.zaxxer.hikari.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown completed.
+2023-01-24 20:30:21,524 INFO by.project.discoveranewcountrybot.DiscoverANewCountryBotApplication [main] Starting DiscoverANewCountryBotApplication using Java 1.8.0_352 on DESKTOP-ASQFE2E with PID 1084 (E:\1.  JAVA Lab\TelegramBotDiscoverANewCountry\DiscoverANewCountryBot\target\classes started by Gygabyte in E:\1.  JAVA Lab\TelegramBotDiscoverANewCountry\DiscoverANewCountryBot)
+2023-01-24 20:30:21,527 INFO by.project.discoveranewcountrybot.DiscoverANewCountryBotApplication [main] No active profile set, falling back to 1 default profile: "default"
+2023-01-24 20:30:21,967 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-01-24 20:30:22,045 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 69 ms. Found 1 JPA repository interfaces.
+2023-01-24 20:30:22,376 INFO org.hibernate.jpa.internal.util.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-01-24 20:30:22,415 INFO org.hibernate.Version [main] HHH000412: Hibernate ORM core version 5.6.9.Final
+2023-01-24 20:30:22,552 INFO org.hibernate.annotations.common.Version [main] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-01-24 20:30:22,654 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Starting...
+2023-01-24 20:30:22,814 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Start completed.
+2023-01-24 20:30:22,828 INFO org.hibernate.dialect.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL95Dialect
+2023-01-24 20:30:23,378 INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-01-24 20:30:23,387 INFO org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-01-24 20:30:24,419 INFO by.project.discoveranewcountrybot.DiscoverANewCountryBotApplication [main] Started DiscoverANewCountryBotApplication in 3.243 seconds (JVM running for 4.035)
+2023-01-24 20:31:01,238 INFO by.project.discoveranewcountrybot.service.BotService [discover_country_bot Telegram Executor] Replied to user: Stanislav
+2023-01-24 20:33:57,043 INFO org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean [SpringApplicationShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-01-24 20:33:57,051 INFO com.zaxxer.hikari.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown initiated...
+2023-01-24 20:33:57,076 INFO com.zaxxer.hikari.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown completed.
+2023-01-24 20:34:03,806 INFO by.project.discoveranewcountrybot.DiscoverANewCountryBotApplication [main] Starting DiscoverANewCountryBotApplication using Java 1.8.0_352 on DESKTOP-ASQFE2E with PID 6352 (E:\1.  JAVA Lab\TelegramBotDiscoverANewCountry\DiscoverANewCountryBot\target\classes started by Gygabyte in E:\1.  JAVA Lab\TelegramBotDiscoverANewCountry\DiscoverANewCountryBot)
+2023-01-24 20:34:03,809 INFO by.project.discoveranewcountrybot.DiscoverANewCountryBotApplication [main] No active profile set, falling back to 1 default profile: "default"
+2023-01-24 20:34:04,324 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-01-24 20:34:04,379 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 44 ms. Found 1 JPA repository interfaces.
+2023-01-24 20:34:04,782 INFO org.hibernate.jpa.internal.util.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-01-24 20:34:04,836 INFO org.hibernate.Version [main] HHH000412: Hibernate ORM core version 5.6.9.Final
+2023-01-24 20:34:05,011 INFO org.hibernate.annotations.common.Version [main] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-01-24 20:34:05,131 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Starting...
+2023-01-24 20:34:05,316 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Start completed.
+2023-01-24 20:34:05,336 INFO org.hibernate.dialect.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL95Dialect
+2023-01-24 20:34:06,027 INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-01-24 20:34:06,037 INFO org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-01-24 20:34:07,289 INFO by.project.discoveranewcountrybot.DiscoverANewCountryBotApplication [main] Started DiscoverANewCountryBotApplication in 3.868 seconds (JVM running for 5.269)
+2023-01-24 22:04:48,328 INFO org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean [SpringApplicationShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-01-24 22:04:48,341 INFO com.zaxxer.hikari.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown initiated...
+2023-01-24 22:04:48,369 INFO com.zaxxer.hikari.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown completed.
