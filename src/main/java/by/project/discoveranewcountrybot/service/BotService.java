@@ -5,6 +5,7 @@ import by.project.discoveranewcountrybot.model.City;
 import by.project.discoveranewcountrybot.service.commands.AboutBotCommand;
 import by.project.discoveranewcountrybot.service.commands.AddCityCommand;
 import by.project.discoveranewcountrybot.service.commands.AllCitesCommand;
+import by.project.discoveranewcountrybot.service.commands.DeleteCityCommand;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
 import org.telegram.telegrambots.bots.TelegramLongPollingBot;
@@ -15,11 +16,9 @@ import org.telegram.telegrambots.meta.api.objects.commands.BotCommand;
 import org.telegram.telegrambots.meta.api.objects.commands.scope.BotCommandScopeDefault;
 import org.telegram.telegrambots.meta.exceptions.TelegramApiException;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Date;
-import java.util.List;
-import java.util.regex.Pattern;
+
+import java.util.*;
+
 
 //Аннотация позволяет подключать логирование.
 @Slf4j
@@ -33,12 +32,15 @@ public class BotService extends TelegramLongPollingBot {
     private final AddCityCommand ADDCITYCOMMAND;
     private final AllCitesCommand ALLCITESCOMMAND;
 
+    private final DeleteCityCommand DELETECITYCOMMAND;
+
     public BotService(BotConfig config, AboutBotCommand aboutBotCommand, AddCityCommand addCityCommand,
-                      AllCitesCommand allCitesCommand) {
+                      AllCitesCommand allCitesCommand,DeleteCityCommand deleteCityCommand) {
         this.CONFIG = config;
         this.ABOUTBOTCOMMAND = aboutBotCommand;
         this.ADDCITYCOMMAND = addCityCommand;
         this.ALLCITESCOMMAND = allCitesCommand;
+        this.DELETECITYCOMMAND = deleteCityCommand;
         //В конструкторе создаеться лист, который в дальнейшем передаеться для создания меню бота.
        List<BotCommand> listOfCommands = new ArrayList<>();
         listOfCommands.add(new BotCommand("/start", "Command get a welcome message"));
@@ -72,34 +74,38 @@ public class BotService extends TelegramLongPollingBot {
         if (update.hasMessage() && update.getMessage().hasText()) {
             String messageText = update.getMessage().getText();
             long chatId = update.getMessage().getChatId();
-            switch (messageText) {
-                case "/start":
-                    startCommandReceived(chatId, update.getMessage().getChat().getFirstName());
-                    break;
-                case "/all_cites":
-                    allCitesCommandReceived(chatId);
-                    break;
-                case "/add_city":
-                    addCityCommandReceived(chatId);
-                    break;
-                case "/correction_information_of_city":
-                    correctionInformationOfCityCommandReceived(chatId, update);
-                    break;
-                case "/delete_city":
-                    deleteCityCommandReceived(chatId);
-                    break;
-                case "/about_bot":
-                    aboutBotCommandReceived(chatId);
-                    break;
-                case "^([a-zA-Z]*)(\\s)([a-zA-Z]*)(\\s)([0-9]*[.,][0-9]*)(\\s)([0-9]*[.,][0-9]*[.,][0-9]*)$":
-                    parsMessage(chatId, messageText);
-                    break;
-                default:
-                    sendMessage(chatId, "Sorry, command was not recognized");
+            if (messageText.matches("^/[a-zA-Z_]*$")) {
+                switch (messageText) {
+                    case "/start":
+                        startCommandReceived(chatId, update.getMessage().getChat().getFirstName());
+                        break;
+                    case "/all_cites":
+                        allCitesCommandReceived(chatId);
+                        break;
+                    case "/add_city":
+                        addCityCommandReceived(chatId);
+                        break;
+                    case "/correction_information_of_city":
+                        correctionInformationOfCityCommandReceived(chatId, update);
+                        break;
+                    case "/delete_city":
+                        deleteCityCommandReceived(chatId);
+                        break;
+                    case "/about_bot":
+                        aboutBotCommandReceived(chatId);
+                        break;
+                    default:
+                        sendMessage(chatId, "Sorry, command was not recognized");
+                    }
+                } else if (messageText.matches("^([a-zA-Z]*)(\\s)([a-zA-Z]*)(\\s)([0-9]*[.,][0-9]*)(\\s)([0-9]*[.,][0-9]*[.,][0-9]*)$")) {
+                    parsMessageForAdd(chatId, messageText);
+                } else if (messageText.matches("^([a-zA-Z]*)$")){
+                    parseMessageForDelete(messageText);
+                }else{
+                    sendMessage(chatId, "Sorry, data entered incorrectly");
             }
         }
     }
-
     private void startCommandReceived(Long chatId, String nameUser){
         log.info("Replied to user: " + nameUser);
         sendMessage(chatId, "Hi, " + nameUser + ", nice to meet you!");
@@ -116,25 +122,38 @@ public class BotService extends TelegramLongPollingBot {
         }
     private void deleteCityCommandReceived(Long chatId){
         sendMessage(chatId, "What city would you like to delete information about?");
+
     }
-    private void aboutBotCommandReceived(Long chatId){
+    private void aboutBotCommandReceived(long chatId){
         sendMessage(chatId, ABOUTBOTCOMMAND.getINFORMATIZATION());
     }
+    private void parsMessageForAdd(long chatId, String messageText) {
+        String [] words = messageText.split("\\s+");
+        List<String> cityNew = new ArrayList<>();
+        Collections.addAll(cityNew, words);
+            City cityForDB = new City();
+            cityForDB.setChartId((int) chatId);
+            cityForDB.setId((int) (1000000 *  Math.random()));
+            cityForDB.setName(cityNew.get(0));
+            cityForDB.setCountry(cityNew.get(1));
+            cityForDB.setPopulation(Double.valueOf(cityNew.get(2)));
+            String [] number = cityNew.get(3).split("\\.+");
+            List<String> dateForBd = new ArrayList<>();
+            Collections.addAll(dateForBd, number);
+            cityForDB.setFoundationYear(new java.sql.Date(Integer.parseInt(dateForBd.get(0)),Integer.parseInt(dateForBd.get(1)),
+                    Integer.parseInt(dateForBd.get(2))));
+            ADDCITYCOMMAND.addCityCommand(cityForDB);
+            log.info("City add to DB: " + cityForDB);
+        }
+    private void parseMessageForDelete(String messageText) {
+        City city = new City();
+        if (messageText.equals(city.getName())) {
 
-    private void parsMessage(long chatId,String messageText) {
-        Pattern pattern = Pattern.compile("\\s*");
-        List<String> cityNew = Arrays.asList(pattern.split(messageText));
-
-            City city = new City();
-            city.setId((int) chatId);
-            city.setName(cityNew.get(0));
-            city.setCountry(cityNew.get(1));
-            city.setPopulation(Double.valueOf(cityNew.get(2)));
-            city.setFoundationYear(new Date(cityNew.get(3)));
-            ADDCITYCOMMAND.addCityCommand(city);
         }
 
 
+
+    }
     private void sendMessage(Long chatId, String sendMessageForUser) {
         SendMessage messageForUser = new SendMessage();
         messageForUser.setChatId(String.valueOf(chatId));

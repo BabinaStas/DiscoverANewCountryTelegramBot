@@ -3,7 +3,7 @@ package by.project.discoveranewcountrybot.model;
 import lombok.Data;
 
 import javax.persistence.*;
-import java.util.Date;
+import java.sql.Date;
 
 
 //Аннотация связывает таблицу с даннам классом.
@@ -18,12 +18,14 @@ public class City {
     private Double population;
     private Date foundationYear;
 
+    private Integer chartId;
+
     @Override
     public String toString() {
         return "\nName of a city: " + name + "\n" +
                 "Country: " + country + "\n" +
                 "Population: " + population + "\n" +
-                "Foundation: "  + foundationYear;
+                "Foundation: "  + foundationYear + "\n";
 
     }
 }
