@@ -11,11 +11,12 @@ public class DeleteCityCommand {
     @Autowired
     CityRepository cityRepository;
 
-    public void deleteCityCommand(long chartId, String messageOfUser){
+    public City findByNameAndCountry(String name) {
+        return cityRepository.findByNameAndCountry(name);
+    }
 
-/*            cityRepository.delete(cityRepository.findById(chartId).get());*/
-
-
+    public void deleteCityCommand(String messageOfUser){
+        cityRepository.delete(findByNameAndCountry(messageOfUser));
         }
     }
 

@@ -146,14 +146,9 @@ public class BotService extends TelegramLongPollingBot {
             log.info("City add to DB: " + cityForDB);
         }
     private void parseMessageForDelete(String messageText) {
-        City city = new City();
-        if (messageText.equals(city.getName())) {
-
+        DELETECITYCOMMAND.deleteCityCommand(messageText);
         }
 
-
-
-    }
     private void sendMessage(Long chatId, String sendMessageForUser) {
         SendMessage messageForUser = new SendMessage();
         messageForUser.setChatId(String.valueOf(chatId));
