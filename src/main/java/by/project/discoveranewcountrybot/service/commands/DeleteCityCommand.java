@@ -12,7 +12,7 @@ public class DeleteCityCommand {
     CityRepository cityRepository;
 
     public City findByNameAndCountry(String name) {
-        return cityRepository.findByNameAndCountry(name);
+        return cityRepository.findByNameAndCountry(name, null);
     }
 
     public void deleteCityCommand(String messageOfUser){

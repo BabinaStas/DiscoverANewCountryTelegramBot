@@ -1,6 +1,7 @@
 package by.project.discoveranewcountrybot.model;
 
 import lombok.Data;
+import lombok.Generated;
 
 import javax.persistence.*;
 import java.sql.Date;
@@ -9,9 +10,11 @@ import java.sql.Date;
 //Аннотация связывает таблицу с даннам классом.
 @Entity(name = "cites_data_table")
 @Data
+@Table
 public class City {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     private String name;
     private String country;
