@@ -1,0 +1,134 @@
+Index: src/main/java/by/project/discoveranewcountrybot/model/City.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/by/project/discoveranewcountrybot/model/City.java b/src/main/java/by/project/discoveranewcountrybot/model/City.java
+--- a/src/main/java/by/project/discoveranewcountrybot/model/City.java	(revision bafafb989ddd097e0389f433e4f16270107e4f8f)
++++ b/src/main/java/by/project/discoveranewcountrybot/model/City.java	(revision cda468116e7c8ee063a228c06cd108e3effd0ab5)
+@@ -1,6 +1,7 @@
+ package by.project.discoveranewcountrybot.model;
+ 
+ import lombok.Data;
++import lombok.Generated;
+ 
+ import javax.persistence.*;
+ import java.sql.Date;
+@@ -9,9 +10,11 @@
+ //Аннотация связывает таблицу с даннам классом.
+ @Entity(name = "cites_data_table")
+ @Data
++@Table
+ public class City {
+ 
+     @Id
++    @GeneratedValue(strategy = GenerationType.IDENTITY)
+     private Integer id;
+     private String name;
+     private String country;
+Index: src/main/java/by/project/discoveranewcountrybot/model/CityRepository.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/by/project/discoveranewcountrybot/model/CityRepository.java b/src/main/java/by/project/discoveranewcountrybot/model/CityRepository.java
+--- a/src/main/java/by/project/discoveranewcountrybot/model/CityRepository.java	(revision bafafb989ddd097e0389f433e4f16270107e4f8f)
++++ b/src/main/java/by/project/discoveranewcountrybot/model/CityRepository.java	(revision cda468116e7c8ee063a228c06cd108e3effd0ab5)
+@@ -1,12 +1,10 @@
+ package by.project.discoveranewcountrybot.model;
+ 
+-import org.springframework.data.jpa.repository.Query;
+-import org.springframework.data.repository.CrudRepository;
++import org.springframework.data.jpa.repository.JpaRepository;
++import org.springframework.stereotype.Repository;
+ 
+-import java.util.Optional;
++@Repository
++public interface CityRepository extends JpaRepository<City, Integer> {
+ 
+-public interface CityRepository extends CrudRepository<City,Long> {
+-
+-    @Query
+-    City findByNameAndCountry(String name);
++    City findByNameAndCountry(String name, String country);
+ }
+Index: src/main/java/by/project/discoveranewcountrybot/service/commands/DeleteCityCommand.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/by/project/discoveranewcountrybot/service/commands/DeleteCityCommand.java b/src/main/java/by/project/discoveranewcountrybot/service/commands/DeleteCityCommand.java
+--- a/src/main/java/by/project/discoveranewcountrybot/service/commands/DeleteCityCommand.java	(revision bafafb989ddd097e0389f433e4f16270107e4f8f)
++++ b/src/main/java/by/project/discoveranewcountrybot/service/commands/DeleteCityCommand.java	(revision cda468116e7c8ee063a228c06cd108e3effd0ab5)
+@@ -12,7 +12,7 @@
+     CityRepository cityRepository;
+ 
+     public City findByNameAndCountry(String name) {
+-        return cityRepository.findByNameAndCountry(name);
++        return cityRepository.findByNameAndCountry(name, null);
+     }
+ 
+     public void deleteCityCommand(String messageOfUser){
+Index: src/main/resources/logback.xml
+===================================================================
+diff --git a/src/main/resources/logback.xml b/src/main/resources/logback.xml
+deleted file mode 100644
+--- a/src/main/resources/logback.xml	(revision bafafb989ddd097e0389f433e4f16270107e4f8f)
++++ /dev/null	(revision bafafb989ddd097e0389f433e4f16270107e4f8f)
+@@ -1,35 +0,0 @@
+-<configuration>
+-
+-    <property name="LOG" value="/1.  JAVA Lab/TelegramBotDiscoverANewCountry/DiscoverANewCountryBot/app.log"/>
+-
+-    <appender name="FILE-ROLLING" class="ch.qos.logback.core.rolling.RollingFileAppender">
+-        <file>${LOG}</file>
+-
+-        <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
+-            <fileNamePattern>/var/log/proj3ct.io/tg-simple-bot/app.%d{yyyy-MM-dd}.%i.log.gz</fileNamePattern>
+-            <!-- each archived file, size max 10MB -->
+-            <maxFileSize>10MB</maxFileSize>
+-            <!-- total size of all archive files, if total size > 20GB, it will delete old archived file -->
+-            <totalSizeCap>1GB</totalSizeCap>
+-            <!-- 60 days to keep -->
+-            <maxHistory>60</maxHistory>
+-        </rollingPolicy>
+-
+-        <encoder>
+-            <pattern>%d %p %c{1.} [%t] %m%n</pattern>
+-        </encoder>
+-    </appender>
+-
+-    <logger name="io.proj3ct.SpringDemoBot" level="debug" additivity="false">
+-        <appender-ref ref="FILE-ROLLING"/>
+-    </logger>
+-
+-    <root level="error">
+-        <appender-ref ref="FILE-ROLLING"/>
+-    </root>
+-
+-    <root level="info">
+-        <appender-ref ref="FILE-ROLLING"/>
+-    </root>
+-
+-</configuration>
+\ No newline at end of file
+Index: src/test/java/by/project/discoveranewcountrybot/DiscoverANewCountryBotApplicationTests.java
+===================================================================
+diff --git a/src/test/java/by/project/discoveranewcountrybot/DiscoverANewCountryBotApplicationTests.java b/src/test/java/by/project/discoveranewcountrybot/DiscoverANewCountryBotApplicationTests.java
+deleted file mode 100644
+--- a/src/test/java/by/project/discoveranewcountrybot/DiscoverANewCountryBotApplicationTests.java	(revision bafafb989ddd097e0389f433e4f16270107e4f8f)
++++ /dev/null	(revision bafafb989ddd097e0389f433e4f16270107e4f8f)
+@@ -1,13 +0,0 @@
+-package by.project.discoveranewcountrybot;
+-
+-import org.junit.jupiter.api.Test;
+-import org.springframework.boot.test.context.SpringBootTest;
+-
+-@SpringBootTest
+-class DiscoverANewCountryBotApplicationTests {
+-
+-	@Test
+-	void contextLoads() {
+-	}
+-
+-}
