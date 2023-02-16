@@ -14,8 +14,6 @@ public class AllCitesCommand {
     private CityRepository cityRepository;
 
     public List<String> allCitesCommand() {
-        List<String> allCites = new ArrayList<>();
-        allCites.addAll(Collections.singleton(cityRepository.findAll().toString()));
-        return allCites;
+        return new ArrayList<>(Collections.singleton(cityRepository.findAll().toString()));
     }
 }

@@ -99,7 +99,7 @@ public class BotService extends TelegramLongPollingBot {
                     }
                 } else if (messageText.matches("^([a-zA-Z]*)(\\s)([a-zA-Z]*)(\\s)([0-9]*[.,][0-9]*)(\\s)([0-9]*[.,][0-9]*[.,][0-9]*)$")) {
                     parsMessageForAdd(chatId, messageText);
-                } else if (messageText.matches("^([a-zA-Z]*)$")){
+                } else if (messageText.matches("^([a-zA-Z]*)(\\s)([a-zA-Z]*)$")){
                     parseMessageForDelete(messageText);
                 }else{
                     sendMessage(chatId, "Sorry, data entered incorrectly");
@@ -146,7 +146,10 @@ public class BotService extends TelegramLongPollingBot {
             log.info("City add to DB: " + cityForDB);
         }
     private void parseMessageForDelete(String messageText) {
-        DELETECITYCOMMAND.deleteCityCommand(messageText);
+        String [] words = messageText.split("\\s+");
+        List<String> nameOfCity = new ArrayList<>();
+        Collections.addAll(nameOfCity, words);
+        DELETECITYCOMMAND.deleteCityCommand(nameOfCity.get(0),nameOfCity.get(1));
         }
 
     private void sendMessage(Long chatId, String sendMessageForUser) {
