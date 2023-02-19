@@ -2,10 +2,7 @@ package by.project.discoveranewcountrybot.service;
 
 import by.project.discoveranewcountrybot.config.BotConfig;
 import by.project.discoveranewcountrybot.model.City;
-import by.project.discoveranewcountrybot.service.commands.AboutBotCommand;
-import by.project.discoveranewcountrybot.service.commands.AddCityCommand;
-import by.project.discoveranewcountrybot.service.commands.AllCitesCommand;
-import by.project.discoveranewcountrybot.service.commands.DeleteCityCommand;
+import by.project.discoveranewcountrybot.service.commands.*;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
 import org.telegram.telegrambots.bots.TelegramLongPollingBot;
@@ -31,16 +28,18 @@ public class BotService extends TelegramLongPollingBot {
     private final AboutBotCommand ABOUTBOTCOMMAND;
     private final AddCityCommand ADDCITYCOMMAND;
     private final AllCitesCommand ALLCITESCOMMAND;
-
     private final DeleteCityCommand DELETECITYCOMMAND;
 
+    private final UpdateCityCommand UPDATECITYCOMMAND;
+
     public BotService(BotConfig config, AboutBotCommand aboutBotCommand, AddCityCommand addCityCommand,
-                      AllCitesCommand allCitesCommand,DeleteCityCommand deleteCityCommand) {
+                      AllCitesCommand allCitesCommand,DeleteCityCommand deleteCityCommand, UpdateCityCommand updateCityCommand) {
         this.CONFIG = config;
         this.ABOUTBOTCOMMAND = aboutBotCommand;
         this.ADDCITYCOMMAND = addCityCommand;
         this.ALLCITESCOMMAND = allCitesCommand;
         this.DELETECITYCOMMAND = deleteCityCommand;
+        this.UPDATECITYCOMMAND = updateCityCommand;
         //В конструкторе создаеться лист, который в дальнейшем передаеться для создания меню бота.
        List<BotCommand> listOfCommands = new ArrayList<>();
         listOfCommands.add(new BotCommand("/start", "Command get a welcome message"));
@@ -101,11 +100,16 @@ public class BotService extends TelegramLongPollingBot {
                     parsMessageForAdd(chatId, messageText);
                 } else if (messageText.matches("^([a-zA-Z]*)(\\s)([a-zA-Z]*)$")){
                     parseMessageForDelete(messageText);
+                }else if (messageText.matches("^([a-zA-Z]*)(\\s)([a-zA-Z]*)(\\s)([a-zA-Z]*)(\\s)([a-zA-Z]*)(\\s)([0-9]*[.,][0-9]*)(\\s)([0-9]*[.,][0-9]*[.,][0-9]*)$")){
+                parseMessageForUpdate(messageText);
                 }else{
                     sendMessage(chatId, "Sorry, data entered incorrectly");
             }
         }
     }
+
+
+
     private void startCommandReceived(Long chatId, String nameUser){
         log.info("Replied to user: " + nameUser);
         sendMessage(chatId, "Hi, " + nameUser + ", nice to meet you!");
@@ -142,21 +146,31 @@ public class BotService extends TelegramLongPollingBot {
             Collections.addAll(dateForBd, number);
             cityForDB.setFoundationYear(new java.sql.Date(Integer.parseInt(dateForBd.get(0)),Integer.parseInt(dateForBd.get(1)),
                     Integer.parseInt(dateForBd.get(2))));
-            ADDCITYCOMMAND.addCityCommand(cityForDB);
-            log.info("City add to DB: " + cityForDB);
-        }
+            if(cityForDB.equals(ADDCITYCOMMAND.findByNameAndCountry(cityForDB.getName(),cityForDB.getCountry()))){
+                sendMessage(chatId, "The city is already in the database.");
+            }else{
+                ADDCITYCOMMAND.addCityCommand(cityForDB);
+                log.info("City add to DB: " + cityForDB);
+            }
+    }
     private void parseMessageForDelete(String messageText) {
-        String [] words = messageText.split("\\s+");
+        String[] words = messageText.split("\\s+");
         List<String> nameOfCity = new ArrayList<>();
         Collections.addAll(nameOfCity, words);
-        DELETECITYCOMMAND.deleteCityCommand(nameOfCity.get(0),nameOfCity.get(1));
-        }
+        DELETECITYCOMMAND.deleteCityCommand(nameOfCity.get(0), nameOfCity.get(1));
+    }
+    private void parseMessageForUpdate(String messageText) {
+        String[] words = messageText.split("\\s+");
+        List<String> nameOfCity = new ArrayList<>();
+        Collections.addAll(nameOfCity, words);
+        UPDATECITYCOMMAND.UpdateCityCommand(nameOfCity.get(0), nameOfCity.get(1), nameOfCity.get(2), nameOfCity.get(3),
+                nameOfCity.get(4), nameOfCity.get(5));
+    }
 
     private void sendMessage(Long chatId, String sendMessageForUser) {
         SendMessage messageForUser = new SendMessage();
         messageForUser.setChatId(String.valueOf(chatId));
         messageForUser.setText(sendMessageForUser);
-
         try {
             execute(messageForUser);
         }catch (TelegramApiException e){
