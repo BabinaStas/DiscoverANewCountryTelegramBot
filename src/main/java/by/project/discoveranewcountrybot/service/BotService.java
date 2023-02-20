@@ -85,7 +85,7 @@ public class BotService extends TelegramLongPollingBot {
                         addCityCommandReceived(chatId);
                         break;
                     case "/correction_information_of_city":
-                        correctionInformationOfCityCommandReceived(chatId, update);
+                        correctionInformationOfCityCommandReceived(chatId);
                         break;
                     case "/delete_city":
                         deleteCityCommandReceived(chatId);
@@ -100,33 +100,29 @@ public class BotService extends TelegramLongPollingBot {
                     parsMessageForAdd(chatId, messageText);
                 } else if (messageText.matches("^([a-zA-Z]*)(\\s)([a-zA-Z]*)$")){
                     parseMessageForDelete(messageText);
-                }else if (messageText.matches("^([a-zA-Z]*)(\\s)([a-zA-Z]*)(\\s)([a-zA-Z]*)(\\s)([a-zA-Z]*)(\\s)([0-9]*[.,][0-9]*)(\\s)([0-9]*[.,][0-9]*[.,][0-9]*)$")){
+                }else if (messageText.matches("^([a-zA-Z]*)(\\s)([a-zA-Z]*)(\\s)(\\\\)(\\s)([a-zA-Z]*)(\\s)([a-zA-Z]*)(\\s)([0-9]*[.,][0-9]*)(\\s)([0-9]*[.,][0-9]*[.,][0-9]*)$")){
                 parseMessageForUpdate(messageText);
                 }else{
                     sendMessage(chatId, "Sorry, data entered incorrectly");
             }
         }
     }
-
-
-
     private void startCommandReceived(Long chatId, String nameUser){
         log.info("Replied to user: " + nameUser);
         sendMessage(chatId, "Hi, " + nameUser + ", nice to meet you!");
     }
     private void allCitesCommandReceived(Long chatId){
-        sendMessage(chatId, "All cites in a db: " + ALLCITESCOMMAND.allCitesCommand());
+        sendMessage(chatId, "All cites in a db: " + ALLCITESCOMMAND.allCitesCommand().toString()
+                .replace("[", " ").replace("]", " "));
     }
     private void addCityCommandReceived(Long chatId) {
         sendMessage(chatId, "Please add new city:");
     }
-
-    private void correctionInformationOfCityCommandReceived(Long chatId, Update update) {
+    private void correctionInformationOfCityCommandReceived(Long chatId) {
         sendMessage(chatId, "What would you like to change in the city? ");
-        }
+    }
     private void deleteCityCommandReceived(Long chatId){
         sendMessage(chatId, "What city would you like to delete information about?");
-
     }
     private void aboutBotCommandReceived(long chatId){
         sendMessage(chatId, ABOUTBOTCOMMAND.getINFORMATIZATION());
@@ -144,14 +140,14 @@ public class BotService extends TelegramLongPollingBot {
             String [] number = cityNew.get(3).split("\\.+");
             List<String> dateForBd = new ArrayList<>();
             Collections.addAll(dateForBd, number);
-            cityForDB.setFoundationYear(new java.sql.Date(Integer.parseInt(dateForBd.get(0)),Integer.parseInt(dateForBd.get(1)),
+            cityForDB.setFoundationYear(new java.sql.Date(Integer.parseInt(dateForBd.get(0)) - 1900,Integer.parseInt(dateForBd.get(1)),
                     Integer.parseInt(dateForBd.get(2))));
-            if(cityForDB.equals(ADDCITYCOMMAND.findByNameAndCountry(cityForDB.getName(),cityForDB.getCountry()))){
-                sendMessage(chatId, "The city is already in the database.");
-            }else{
-                ADDCITYCOMMAND.addCityCommand(cityForDB);
-                log.info("City add to DB: " + cityForDB);
-            }
+        if(ADDCITYCOMMAND.findCity(cityForDB.getName(),cityForDB.getCountry())){
+            sendMessage(chatId, "The city is already in the database.");
+        }else{
+            ADDCITYCOMMAND.addCityCommand(cityForDB);
+            log.info("City add to DB: " + cityForDB);
+        }
     }
     private void parseMessageForDelete(String messageText) {
         String[] words = messageText.split("\\s+");
@@ -163,10 +159,9 @@ public class BotService extends TelegramLongPollingBot {
         String[] words = messageText.split("\\s+");
         List<String> nameOfCity = new ArrayList<>();
         Collections.addAll(nameOfCity, words);
-        UPDATECITYCOMMAND.UpdateCityCommand(nameOfCity.get(0), nameOfCity.get(1), nameOfCity.get(2), nameOfCity.get(3),
-                nameOfCity.get(4), nameOfCity.get(5));
+        UPDATECITYCOMMAND.UpdateCityCommand(nameOfCity.get(0), nameOfCity.get(1), nameOfCity.get(3), nameOfCity.get(4),
+                nameOfCity.get(5), nameOfCity.get(6));
     }
-
     private void sendMessage(Long chatId, String sendMessageForUser) {
         SendMessage messageForUser = new SendMessage();
         messageForUser.setChatId(String.valueOf(chatId));

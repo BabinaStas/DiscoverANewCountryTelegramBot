@@ -1,7 +1,6 @@
 package by.project.discoveranewcountrybot.model;
 
 import lombok.Data;
-import lombok.Generated;
 
 import javax.persistence.*;
 import java.sql.Date;
@@ -28,7 +27,7 @@ public class City {
         return "\nName of a city: " + name + "\n" +
                 "Country: " + country + "\n" +
                 "Population: " + population + "\n" +
-                "Foundation: "  + foundationYear + "\n";
+                "Foundation: "  + foundationYear;
 
     }
 }

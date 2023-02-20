@@ -5,6 +5,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
@@ -14,6 +15,7 @@ public class AllCitesCommand {
     private CityRepository cityRepository;
 
     public List<String> allCitesCommand() {
-        return new ArrayList<>(Collections.singleton(cityRepository.findAll().toString()));
+        return new ArrayList<>(Collections.singleton(cityRepository.findAll().toString()
+                .replace("[", " ").replace("]", " ")));
     }
 }

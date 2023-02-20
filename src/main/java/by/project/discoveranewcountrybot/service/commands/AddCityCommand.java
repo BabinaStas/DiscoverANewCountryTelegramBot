@@ -6,6 +6,9 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import java.util.Objects;
+import java.util.Optional;
+
 @Slf4j
 @Component
 public class AddCityCommand {
@@ -14,6 +17,10 @@ public class AddCityCommand {
 
     public City findByNameAndCountry(String name, String country) {
         return cityRepository.findByNameAndCountry(name, country);
+    }
+
+    public boolean findCity(String name, String country) {
+        return Optional.ofNullable(findByNameAndCountry(name,country)).isPresent();
     }
 
     public void addCityCommand(City city) {
