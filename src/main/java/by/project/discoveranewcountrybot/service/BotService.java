@@ -99,9 +99,9 @@ public class BotService extends TelegramLongPollingBot {
                 } else if (messageText.matches("^([a-zA-Z]*)(\\s)([a-zA-Z]*)(\\s)([0-9]*[.,][0-9]*)(\\s)([0-9]*[.,][0-9]*[.,][0-9]*)$")) {
                     parsMessageForAdd(chatId, messageText);
                 } else if (messageText.matches("^([a-zA-Z]*)(\\s)([a-zA-Z]*)$")){
-                    parseMessageForDelete(messageText);
+                    parseMessageForDelete(messageText, chatId);
                 }else if (messageText.matches("^([a-zA-Z]*)(\\s)([a-zA-Z]*)(\\s)(\\\\)(\\s)([a-zA-Z]*)(\\s)([a-zA-Z]*)(\\s)([0-9]*[.,][0-9]*)(\\s)([0-9]*[.,][0-9]*[.,][0-9]*)$")){
-                parseMessageForUpdate(messageText);
+                parseMessageForUpdate(messageText, chatId);
                 }else{
                     sendMessage(chatId, "Sorry, data entered incorrectly");
             }
@@ -149,18 +149,28 @@ public class BotService extends TelegramLongPollingBot {
             log.info("City add to DB: " + cityForDB);
         }
     }
-    private void parseMessageForDelete(String messageText) {
+    private void parseMessageForDelete(String messageText, long chatId) {
         String[] words = messageText.split("\\s+");
         List<String> nameOfCity = new ArrayList<>();
         Collections.addAll(nameOfCity, words);
-        DELETECITYCOMMAND.deleteCityCommand(nameOfCity.get(0), nameOfCity.get(1));
+        if (!DELETECITYCOMMAND.findCity(nameOfCity.get(0), nameOfCity.get(1))) {
+            sendMessage(chatId, "The city doesn't already in the database.");
+        } else {
+            DELETECITYCOMMAND.deleteCityCommand(nameOfCity.get(0), nameOfCity.get(1));
+            log.info("City delete of DB: " + nameOfCity.get(0));
+        }
     }
-    private void parseMessageForUpdate(String messageText) {
+    private void parseMessageForUpdate(String messageText, long chatId) {
         String[] words = messageText.split("\\s+");
         List<String> nameOfCity = new ArrayList<>();
         Collections.addAll(nameOfCity, words);
-        UPDATECITYCOMMAND.UpdateCityCommand(nameOfCity.get(0), nameOfCity.get(1), nameOfCity.get(3), nameOfCity.get(4),
-                nameOfCity.get(5), nameOfCity.get(6));
+        if (UPDATECITYCOMMAND.findCity(nameOfCity.get(0), nameOfCity.get(1))) {
+            sendMessage(chatId, "The city doesn't already in the database.");
+        } else {
+            UPDATECITYCOMMAND.updateCityCommand(nameOfCity.get(0), nameOfCity.get(1), nameOfCity.get(3), nameOfCity.get(4),
+                    nameOfCity.get(5), nameOfCity.get(6));
+            log.info("City update of DB: " + nameOfCity.get(0));
+        }
     }
     private void sendMessage(Long chatId, String sendMessageForUser) {
         SendMessage messageForUser = new SendMessage();

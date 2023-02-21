@@ -8,6 +8,7 @@ import org.springframework.stereotype.Component;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.util.Optional;
 
 @Component
 public class UpdateCityCommand {
@@ -18,21 +19,24 @@ public class UpdateCityCommand {
     public City findByNameAndCountry(String name, String country) {
         return cityRepository.findByNameAndCountry(name, country);
     }
+    public boolean findCity(String name, String country) {
+        return Optional.ofNullable(findByNameAndCountry(name,country)).isPresent();
+    }
 
-    public void UpdateCityCommand(String name, String country, String newNameOfCountry, String newCountry,
+    public void updateCityCommand(String newName, String newCountry, String name, String country,
                                   String newPopulation, String newDateOfFoundation) {
-        City city = new City();
-        city.setId(findByNameAndCountry(name,country).getId());
-        city.setName(newNameOfCountry);
-        city.setPopulation(Double.parseDouble(newPopulation));
+        City newCity = new City();
+        newCity.setId(findByNameAndCountry(name,country).getId());
+        newCity.setName(newName);
+        newCity.setPopulation(Double.parseDouble(newPopulation));
         String [] number = newDateOfFoundation.split("\\.+");
         List<String> dateForBd = new ArrayList<>();
         Collections.addAll(dateForBd, number);
-        city.setFoundationYear(new java.sql.Date(Integer.parseInt(dateForBd.get(0)),Integer.parseInt(dateForBd.get(1)),
+        newCity.setFoundationYear(new java.sql.Date(Integer.parseInt(dateForBd.get(0)),Integer.parseInt(dateForBd.get(1)),
                 Integer.parseInt(dateForBd.get(2))));
-        city.setCountry(newCountry);
-        city.setChartId(findByNameAndCountry(name,country).getChartId());
-        cityRepository.delete(findByNameAndCountry(name, country));
-        cityRepository.save(city);
+        newCity.setCountry(newCountry);
+        newCity.setChartId(findByNameAndCountry(name,country).getChartId());
+        cityRepository.delete(findByNameAndCountry(name,country));
+        cityRepository.save(newCity);
     }
 }

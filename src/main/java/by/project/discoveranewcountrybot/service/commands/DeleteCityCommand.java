@@ -5,6 +5,8 @@ import by.project.discoveranewcountrybot.model.CityRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import java.util.Optional;
+
 @Component
 public class DeleteCityCommand {
 
@@ -13,6 +15,9 @@ public class DeleteCityCommand {
 
     public City findByNameAndCountry(String name, String country) {
         return cityRepository.findByNameAndCountry(name, country);
+    }
+    public boolean findCity(String name, String country) {
+        return Optional.ofNullable(findByNameAndCountry(name,country)).isPresent();
     }
 
     public void deleteCityCommand(String name, String country){
