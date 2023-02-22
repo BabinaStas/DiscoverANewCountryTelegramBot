@@ -1,5 +1,6 @@
 package by.project.discoveranewcountrybot.service.commands;
 
+import by.project.discoveranewcountrybot.model.City;
 import by.project.discoveranewcountrybot.model.CityRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -18,4 +19,9 @@ public class AllCitesCommand {
         return new ArrayList<>(Collections.singleton(cityRepository.findAll().toString()
                 .replace("[", " ").replace("]", " ")));
     }
+
+    public City findByName(String name) {
+        return cityRepository.findByName(name);
+    }
+
 }

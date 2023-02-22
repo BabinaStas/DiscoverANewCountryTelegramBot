@@ -24,7 +24,7 @@ public class City {
 
     @Override
     public String toString() {
-        return "\nName of a city: " + name + "\n" +
+        return "\n\nName of a city: " + name + "\n" +
                 "Country: " + country + "\n" +
                 "Population: " + population + "\n" +
                 "Foundation: "  + foundationYear;
