@@ -191,10 +191,11 @@ public class BotService extends TelegramLongPollingBot {
         String[] words = messageText.split("\\s+");
         List<String> nameOfCity = new ArrayList<>();
         Collections.addAll(nameOfCity, words);
-        if (UPDATECITYCOMMAND.findCity(nameOfCity.get(3), nameOfCity.get(4))) {
+        if (!UPDATECITYCOMMAND.findCity(nameOfCity.get(0), nameOfCity.get(1))) {
             sendMessage(chatId, "The city doesn't already in the database." +
                     "\n" + STARTBOTCOMMAND.getMESSAGEFORUSERELSE());
-        } else {UPDATECITYCOMMAND.updateCityCommand(nameOfCity.get(0), nameOfCity.get(1), nameOfCity.get(3),
+        } else {
+            UPDATECITYCOMMAND.updateCityCommand(nameOfCity.get(0), nameOfCity.get(1), nameOfCity.get(3),
                     nameOfCity.get(4), nameOfCity.get(5), nameOfCity.get(6));
             sendMessage(chatId, "City update of DB." +
                     "\n" + STARTBOTCOMMAND.getMESSAGEFORUSERELSE());
